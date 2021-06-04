@@ -1,0 +1,2 @@
+_extends: .github
+tag-template: jetty-github-checker-$NEXT_PATCH_VERSION
