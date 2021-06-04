@@ -32,4 +32,6 @@ jobs:
           java-version: ${{ matrix.java }}
 
       - name: Build with Maven
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: mvn clean install -B -V -e

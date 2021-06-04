@@ -54,7 +54,7 @@ public class GitHubPRsResolver
 
         Cache cache = new Cache(cacheDirectory.toFile(), 10 * 1024 * 1024); // 10MB cache
 
-        this.github = GitHubBuilder.fromPropertyFile()
+        this.github = GitHubBuilder.fromEnvironment().fromPropertyFile()
             .withConnector(new OkHttpConnector(new OkHttpClient.Builder().cache(cache).build()))
             .build();
 
