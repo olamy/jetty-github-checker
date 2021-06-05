@@ -66,7 +66,7 @@ public class GitHubPRsResolver
         }
 
         // list current rate limits
-        LOG.info("Github API Rate Limits: {}", this.github.getRateLimit().toString());
+        LOG.info("Github API Rate Limits: {}", this.github.getRateLimit());
     }
 
     public List<GHPullRequest> getOpenPRs() throws IOException
