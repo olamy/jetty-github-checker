@@ -54,17 +54,26 @@ public class GitHubPRsResolver
 
         Cache cache = new Cache(cacheDirectory.toFile(), 10 * 1024 * 1024); // 10MB cache
 
-        this.github = GitHubBuilder.fromEnvironment().fromPropertyFile()
+        this.github = GitHubBuilder.fromEnvironment()
             .withConnector(new OkHttpConnector(new OkHttpClient.Builder().cache(cache).build()))
             .build();
 
-        // Test access
-        if (!this.github.isCredentialValid())
+        if (this.github.isCredentialValid())
         {
-            this.github = null;
-            throw new IOException("Unable to access github, invalid credentials in ~/.github ?");
+            return;
         }
+        else // try with properties file
+        {
+            this.github = GitHubBuilder.fromPropertyFile().withConnector(
+                new OkHttpConnector(new OkHttpClient.Builder().cache(cache).build())).build();
 
+            // Test access
+            if (!this.github.isCredentialValid())
+            {
+                this.github = null;
+                throw new IOException("Unable to access github, invalid credentials in ~/.github ?");
+            }
+        }
         // list current rate limits
         LOG.info("Github API Rate Limits: {}", this.github.getRateLimit());
     }
