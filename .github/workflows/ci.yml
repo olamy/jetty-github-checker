@@ -33,6 +33,5 @@ jobs:
 
       - name: Build with Maven
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_LOGIN: olamy
+          GITHUB_OAUTH: ${{ secrets.GITHUB_TOKEN }}
         run: mvn clean install -B -V -e
