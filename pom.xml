@@ -14,7 +14,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
-    <github-api.version>1.130</github-api.version>
+    <github-api.version>1.135</github-api.version>
     <okhttp3.version>4.9.0</okhttp3.version>
     <okio.version>2.10.0</okio.version>
     <slf4j.version>1.7.30</slf4j.version>
