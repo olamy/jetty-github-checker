@@ -62,7 +62,7 @@
       <groupId>org.infinispan</groupId>
       <artifactId>infinispan-core</artifactId>
       <scope>test</scope>
-      <version>11.0.11.Final</version>
+      <version>11.0.14.Final</version>
     </dependency>    
   </dependencies>
 
