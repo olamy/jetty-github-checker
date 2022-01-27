@@ -4,6 +4,10 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    ignore:
+      - dependency-name: org.infinispan:*
+        versions:
+          - "< 12"      
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
