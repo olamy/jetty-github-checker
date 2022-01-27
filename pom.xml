@@ -19,6 +19,7 @@
     <okio.version>2.10.0</okio.version>
     <slf4j.version>1.7.35</slf4j.version>
     <junit.engine.version>5.8.2</junit.engine.version>
+    <infinispan.version>11.0.11.Final</infinispan.version>
   </properties>
 
   <dependencies>
@@ -62,7 +63,13 @@
       <groupId>org.infinispan</groupId>
       <artifactId>infinispan-core</artifactId>
       <scope>test</scope>
-      <version>11.0.11.Final</version>
+      <version>${infinispan.version}</version>
+    </dependency>    
+    <dependency>
+      <groupId>org.infinispan</groupId>
+      <artifactId>infinispan-client-hotrod</artifactId>
+      <scope>provided</scope>
+      <version>${infinispan.version}</version>
     </dependency>    
   </dependencies>
 
